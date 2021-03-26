@@ -29,6 +29,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -215,6 +216,7 @@ class MainActivity : AppCompatActivity() {
                     Timber.i("Found BLE device! Name: ${name ?: "Unnamed"}, address: $address")
                 }
                 scanResults.add(result)
+                Log.i("scan result", result.toString())
                 scanResultAdapter.notifyItemInserted(scanResults.size - 1)
             }
         }
